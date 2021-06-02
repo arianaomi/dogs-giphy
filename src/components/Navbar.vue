@@ -1,7 +1,7 @@
 <template>
-  <nav>
+  <nav class="flex bg-pink-200 h-10">
     <div>
-      <p>hi</p>
+      <p>imagen</p>
     </div>
     <div>
       <p>router</p>

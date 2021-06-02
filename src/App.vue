@@ -1,5 +1,5 @@
-<template>
-  <main>
+<template >
+  <main class="bg-black text-white h-screen px-8 md:px-16 lg:px-32">
     <navbar />
     <router-view />
   </main>
@@ -15,6 +15,3 @@ export default {
   },
 };
 </script>
-
-<style>
-</style>
