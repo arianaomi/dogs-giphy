@@ -30,6 +30,12 @@ export default {
   methods: {
     async onSearch() {
       if (this.keyword) {
+        let hasDogs = this.keyword.includes("dogs");
+        let hasPerros = this.keyword.includes("perros");
+
+        if (!hasDogs || !hasPerros) {
+          this.keyword = `${this.keyword} dogs`;
+        }
         this.addSearch();
         let res = await api.getSpecialGif(this.keyword);
         this.keyword = "";

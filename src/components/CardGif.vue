@@ -3,9 +3,9 @@
     <article
       v-for="gif in gifs"
       :key="gif.id"
-      class="w-full my-2 md:mx-4 relative md:w-45 h-full lg:w-auto"
+      class="w-full my-3 relative md:w-45 md:inline-block lg:w-auto"
     >
-      <img ref="url" :src="gif.images.original.url" class="w-full" />
+      <img ref="url" :src="gif.images.original.url" class="w-full lg:w-auto" />
       <div
         class="absolute inset-x-0 bottom-0 w-full flex bg-purple-600 bg-opacity-50 p-1 justify-end"
       >
