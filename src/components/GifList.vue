@@ -1,5 +1,5 @@
 <template>
-  <section class="flex flex-wrap justify-between">
+  <section class="flex flex-wrap justify-around">
     <card-gif v-for="gif in gifs" :key="gif.id" :gif="gif" />
   </section>
 </template>

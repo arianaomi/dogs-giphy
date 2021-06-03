@@ -1,5 +1,7 @@
 <template>
-  <article class="w-full my-3 relative md:w-45 md:inline-block lg:w-auto">
+  <article
+    class="w-full my-3 relative md:w-45 md:inline-block lg:w-auto bg-gradient-to-r from-blue-400 to-pink-200"
+  >
     <img
       ref="url"
       :src="gif.images.original.url"
@@ -21,14 +23,14 @@
         v-if="!isFavorite"
         src="../assets/tv.png"
         class="h-8 mx-2 cursor-pointer"
-        @click="setIsFavorite"
+        @click="addIsFavorite"
       />
 
       <img
         v-else
         src="../assets/tv-color.png"
         class="h-8 mx-2 cursor-pointer"
-        @click="removeFavorite"
+        @click="addIsFavorite"
       />
     </div>
   </article>
@@ -46,7 +48,7 @@ export default {
   data() {
     return {
       isFavorite: false,
-      favorites: [],
+      favoriteArr: [],
     };
   },
   methods: {
@@ -55,16 +57,14 @@ export default {
       document.execCommand("copy");
       this.$refs.url.value = "¡Copiado!";
     },
-    setIsFavorite() {
+    addIsFavorite() {
       //ToDo: revisarlo
       this.isFavorite = !this.isFavorite;
-      this.favorites.push(this.gif);
+      this.favoriteArr.push("shi");
+      console.log(this.favoriteArr);
     },
     removeFavorite() {
       this.isFavorite = !this.isFavorite;
-      console.log(this.favorites);
-      let favoriteArr = this.favorites.filter((gif) => gif.id === this.gif.id);
-      console.log(favoriteArr);
     },
   },
 };

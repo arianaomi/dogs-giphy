@@ -7,7 +7,7 @@
 
     <img
       src="https://media.giphy.com/media/KCwenuvmXxXBKrRyry/giphy.gif"
-      class="w-12 md:w-24"
+      class="w-12 md:w-24 rounded"
     />
     <div class="my-auto flex flex-col md:flex-row">
       <router-link

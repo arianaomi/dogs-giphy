@@ -26,6 +26,7 @@ export default {
   data() {
     return {
       gifs: [],
+      favorites: [],
       isLoading: false,
     };
   },
@@ -39,7 +40,6 @@ export default {
   },
   methods: {
     serch(result) {
-      console.log("res", result);
       this.gifs = result;
     },
   },
