@@ -1,3 +1,4 @@
+/* Usando VUEX: para poder tener acceder a favoritos desde otra vista */
 import Vue from 'vue'
 import Vuex from 'vuex'
 
@@ -5,20 +6,20 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    //similar a data 
     favorites: []
   },
   mutations: {
-    //metodos
     addFavorite(state, payload = {}) {
-      let isFavorite = state.favorites.some(gif => gif.id === payload.gif.id)
-      if (!isFavorite) {
+      let isFavoriteGif = state.favorites.some(favoriteGif => favoriteGif.id === payload.gif.id)
+
+      if (!isFavoriteGif) {
         state.favorites.push(payload.gif)
       }
     },
     removeFavorite(state, payload = {}) {
-      let currentFavorite = state.favorites.filter(gif => gif.id !== payload.gif.id)
-      state.favorites = currentFavorite
+      let favoriteGifs = state.favorites.filter(favoriteGif => favoriteGif.id !== payload.gif.id)
+
+      state.favorites = favoriteGifs
     }
   }
 })

@@ -1,6 +1,11 @@
 <template>
   <div>
     <search @search="serch" />
+    <div
+      class="hidden py-2 md:flex justify-between lg:justify-center flex-wrap"
+    >
+      <last-search v-for="last in lastSearches" :key="last" :keyword="last" />
+    </div>
     <pacman-loader
       :loading="isLoading"
       :color="'#DAA4E7'"
@@ -16,17 +21,20 @@ import api from "@/lib/api";
 
 import Search from "../components/Search";
 import GifList from "../components/GifList";
+import LastSearch from "../components/LastSearch";
 
 export default {
   name: "Home",
   components: {
     GifList,
     Search,
+    LastSearch,
   },
   data() {
     return {
       gifs: [],
       favorites: [],
+      lastSearches: [],
       isLoading: false,
     };
   },
@@ -37,10 +45,23 @@ export default {
       .getDogsGif()
       .then((res) => (this.gifs = res))
       .finally(() => (this.isLoading = false));
+    let data = localStorage.getItem("lastSearches");
+    console.log(data);
+    if (data != null) {
+      this.lastSearches = JSON.parse(data).reverse();
+    }
   },
   methods: {
     serch(result) {
       this.gifs = result;
+    },
+  },
+  watch: {
+    gifs() {
+      let data = localStorage.getItem("lastSearches");
+      if (data != null) {
+        this.lastSearches = JSON.parse(data).reverse();
+      }
     },
   },
 };

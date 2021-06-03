@@ -43,15 +43,22 @@ export default {
       }
     },
     addSearch() {
-      this.lastSearches.push(this.keyword);
-      localStorage.setItem("lastSearches", JSON.stringify(this.lastSearches));
-      //obtener info
-      /*let data = localStorage.getItem("lastSearches")
-      if(data != null){
-        this.tareas = JSON.parse(data)
+      if (this.lastSearches.length <= 6) {
+        this.lastSearches.push(this.keyword);
+        localStorage.setItem("lastSearches", JSON.stringify(this.lastSearches));
+      } else {
+        this.lastSearches.reverse().pop();
+        this.lastSearches.push(this.keyword);
+        localStorage.setItem("lastSearches", JSON.stringify(this.lastSearches));
       }
-      */
     },
+  },
+  created() {
+    let data = localStorage.getItem("lastSearches");
+    console.log(data);
+    if (data != null) {
+      this.lastSearches = JSON.parse(data);
+    }
   },
 };
 </script>
