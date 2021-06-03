@@ -3,6 +3,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 //My views
 import Home from '@/views/Home'
+import Favorite from '@/views/Favorite'
 import Error from '@/views/Error'
 
 Vue.use(Router)
@@ -15,6 +16,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: Home
+    },
+    {
+      path: '/favoritos',
+      name: 'favorites',
+      component: Favorite
     },
     {
       path: '*',

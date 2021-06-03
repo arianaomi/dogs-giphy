@@ -1,11 +1,37 @@
-// const api_key = process.env.API_KEY
-// const baseUrl = `api.giphy.com/v1/gifs/search?api_key=${api_key}&q=dogs`
+const api_key = process.env.VUE_APP_RUTA_API
+const baseUrl = `http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=`
 
-// export const getDogsGif = async () => {
-//   try {
-//     let res = await fetch(baseUrl)
-//     console.log(res)
-//   } catch (error) {
-//     console.log(error)
-//   }
-// }
+const getDogsGif = async () => {
+  try {
+    console.log()
+    let res = await fetch(`${baseUrl}dog`, {
+      headers: {
+        "Accept": 'application/json',
+      },
+    })
+    res = await res.json()
+    return res.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+const getSpecialGif = async (keyword) => {
+  try {
+    console.log()
+    let res = await fetch(`${baseUrl}${keyword}`, {
+      headers: {
+        "Accept": 'application/json',
+      },
+    })
+    res = await res.json()
+    return res.data
+  } catch (error) {
+    console.log(error)
+  }
+}
+
+export default {
+  getDogsGif,
+  getSpecialGif
+}
