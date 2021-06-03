@@ -32,11 +32,11 @@ export default {
       if (this.keyword) {
         let hasDogs = this.keyword.includes("dogs");
         let hasPerros = this.keyword.includes("perros");
-
+        this.addSearch();
         if (!hasDogs || !hasPerros) {
           this.keyword = `${this.keyword} dogs`;
         }
-        this.addSearch();
+
         let res = await api.getSpecialGif(this.keyword);
         this.keyword = "";
         this.$emit("search", res);

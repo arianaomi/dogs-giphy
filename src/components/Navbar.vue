@@ -1,14 +1,14 @@
 <template>
   <nav class="flex justify-between justify-items-center md:h-full my-8">
-    <div class="flex">
-      <img
-        src="https://media.giphy.com/media/3o7abAHdYvZdBNnGZq/giphy.gif"
-        class="w-12 md:w-20"
-      />
-      <router-link :to="{ name: 'home' }" class="my-auto mx-5">
-        <p class="text-pink-700 text-opacity-100 md:text-2xl">DOG GIPHY</p>
-      </router-link>
-    </div>
+    <router-link :to="{ name: 'home' }" class="my-auto mx-5 w-8 md:w-1/6">
+      <img src="../assets/shiba.png" class="w-8 mx-2 cursor-pointer" />
+      <p class="text-pink-700 text-opacity-100 md:text-2xl">DOG GIPHY</p>
+    </router-link>
+
+    <img
+      src="https://media.giphy.com/media/KCwenuvmXxXBKrRyry/giphy.gif"
+      class="w-12 md:w-24"
+    />
     <div class="my-auto flex flex-col md:flex-row">
       <router-link
         :to="{ name: 'home' }"

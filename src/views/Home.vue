@@ -7,7 +7,7 @@
       :size="80"
       class="m-auto"
     />
-    <card-gif v-if="!isLoading" :gifs="gifs" />
+    <gif-list v-if="!isLoading" :gifs="gifs" />
   </div>
 </template>
 
@@ -15,12 +15,12 @@
 import api from "@/lib/api";
 
 import Search from "../components/Search";
-import CardGif from "../components/CardGif";
+import GifList from "../components/GifList";
 
 export default {
   name: "Home",
   components: {
-    CardGif,
+    GifList,
     Search,
   },
   data() {
