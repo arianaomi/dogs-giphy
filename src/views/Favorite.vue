@@ -1,3 +1,3 @@
 <template>
-  <h1>favoritos</h1>
+  <p>favorites</p>
 </template>
