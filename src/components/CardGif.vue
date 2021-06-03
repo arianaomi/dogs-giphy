@@ -5,13 +5,17 @@
       :key="gif.id"
       class="w-full my-3 relative md:w-45 md:inline-block lg:w-auto"
     >
-      <img ref="url" :src="gif.images.original.url" class="w-full lg:w-auto" />
+      <img
+        ref="url"
+        :src="gif.images.original.url"
+        class="w-full lg:w-auto lg:h-full"
+      />
       <div
-        class="absolute inset-x-0 bottom-0 w-full flex bg-purple-600 bg-opacity-50 p-1 justify-end"
+        class="absolute right-0 top-0 flex bg-purple-600 bg-opacity-75 p-1 justify-between"
       >
         <img
           src="../assets/eyes.png"
-          class="w-10 mx-4 cursor-pointer md:w-16"
+          class="w-10 my-4 cursor-pointer md:w-16"
         />
 
         <img
