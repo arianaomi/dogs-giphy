@@ -8,11 +8,11 @@ Dogs-giphy is giphy client where you can get nice dogs gifs ➡️ [DEMO](https:
 
 - [ ] Clone the repository.
 
-- [ ] You will need to install all dependencies  `$ npm install`
+- [ ] Install all dependencies  `$ npm install`
 
-- [ ] You will need to get your api_key (SDK)   [giphy]( https://developers.giphy.com/)
+- [ ] Get your api_key (SDK)   [giphy]( https://developers.giphy.com/)
 
-- [ ] Create a .env file in the root directory
+- [ ] Create a .env file in the root directory and add the giphy key from the previous step
 
 - [ ] Run the command `$ npm run serve`
 
