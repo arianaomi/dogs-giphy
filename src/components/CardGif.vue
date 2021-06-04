@@ -2,6 +2,7 @@
 <template>
   <article
     class="bg-gradient-to-r from-blue-400 to-pink-200 w-full my-3 rounded relative md:w-45 md:inline-block lg:w-auto"
+    v-animate-css.once="animationObject"
   >
     <img
       ref="url"
@@ -14,6 +15,7 @@
       <div
         class="flex bg-gradient-to-r from-indigo-400 to-pink-500"
         @click="copyUrl"
+        v-animate-css.click="'flash'"
       >
         <img
           src="../assets/glasses.png"
@@ -63,6 +65,11 @@ export default {
   data() {
     return {
       isFavorite: false,
+      animationObject: {
+        classes: "fadeInLeft",
+        delay: 500,
+        duration: 1000,
+      },
     };
   },
   created() {

@@ -9,7 +9,8 @@
     />
     <button
       @click="onSearch"
-      class="border text-center border-indigo-400 rounded py-3 px-3 mx-1 md:px-6 bg-gradient-to-r from-indigo-500 to-pink-500"
+      v-animate-css.click="'headShake'"
+      class="border text-center border-indigo-400 rounded py-2 px-2 mx-1 md:px-6 bg-gradient-to-r from-indigo-500 to-pink-500"
     >
       <img src="../assets/loupe.png" class="h-10 cursor-pointer" />
     </button>
