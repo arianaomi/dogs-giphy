@@ -13,12 +13,16 @@
       <router-link
         :to="{ name: 'home' }"
         class="border text-center border-indigo-400 rounded py-3 px-3 my-2 md:px-6 md:my-0 md:mx-4"
+        :class="{ 'bg-gradient-to-r to-indigo-500 from-pink-500': this.isHome }"
       >
         Home
       </router-link>
       <router-link
         :to="{ name: 'favorites' }"
         class="border text-center border-indigo-400 rounded py-3 px-3 my-2 md:px-6 md:my-0"
+        :class="{
+          'bg-gradient-to-r from-indigo-500 to-pink-500': !this.isHome,
+        }"
       >
         Favoritos
       </router-link>
@@ -29,5 +33,24 @@
 <script>
 export default {
   name: "Navbar",
+  data() {
+    return {
+      isHome: true,
+    };
+  },
+  watch: {
+    $route() {
+      this.lookPath();
+    },
+  },
+  methods: {
+    lookPath() {
+      if (this.$route.path === "/favoritos") {
+        this.isHome = false;
+      } else {
+        this.isHome = true;
+      }
+    },
+  },
 };
 </script>

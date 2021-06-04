@@ -5,12 +5,13 @@
       type="text"
       placeholder="Buscador de gifs de perritos"
       v-model="keyword"
+      @keyup.enter="onSearch"
     />
     <button
       @click="onSearch"
-      class="border text-center border-indigo-400 rounded py-3 px-3 mx-1 md:px-6 bg-gradient-to-r from-indigo-400 to-pink-500"
+      class="border text-center border-indigo-400 rounded py-3 px-3 mx-1 md:px-6 bg-gradient-to-r from-indigo-500 to-pink-500"
     >
-      buscar
+      <img src="../assets/loupe.png" class="h-10 cursor-pointer" />
     </button>
   </div>
 </template>
@@ -55,7 +56,6 @@ export default {
   },
   created() {
     let data = localStorage.getItem("lastSearches");
-    console.log(data);
     if (data != null) {
       this.lastSearches = JSON.parse(data);
     }

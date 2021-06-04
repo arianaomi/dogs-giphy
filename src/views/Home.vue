@@ -46,7 +46,6 @@ export default {
       .then((res) => (this.gifs = res))
       .finally(() => (this.isLoading = false));
     let data = localStorage.getItem("lastSearches");
-    console.log(data);
     if (data != null) {
       this.lastSearches = JSON.parse(data).reverse();
     }

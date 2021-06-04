@@ -3,7 +3,6 @@ const baseUrl = `http://api.giphy.com/v1/gifs/search?api_key=${api_key}&q=`
 
 const getDogsGif = async () => {
   try {
-    console.log()
     let res = await fetch(`${baseUrl}dogs`, {
       headers: {
         "Accept": 'application/json',
