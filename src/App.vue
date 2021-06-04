@@ -1,5 +1,5 @@
 <template >
-  <main class="h-full px-8 md:px-16 lg:px-32">
+  <main class="text-white px-8 md:px-16 lg:px-32">
     <navbar />
     <router-view />
   </main>

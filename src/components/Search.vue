@@ -46,12 +46,25 @@ export default {
     },
     addSearch() {
       if (this.lastSearches.length <= 6) {
-        this.lastSearches.push(this.keyword);
-        localStorage.setItem("lastSearches", JSON.stringify(this.lastSearches));
+        const hasKeyword = this.lastSearches.includes(this.keyword);
+        if (!hasKeyword) {
+          this.lastSearches.push(this.keyword);
+          localStorage.setItem(
+            "lastSearches",
+            JSON.stringify(this.lastSearches)
+          );
+        }
       } else {
         this.lastSearches.reverse().pop();
-        this.lastSearches.push(this.keyword);
-        localStorage.setItem("lastSearches", JSON.stringify(this.lastSearches));
+        const hasKeyword = this.lastSearches.includes(this.keyword);
+
+        if (!hasKeyword) {
+          this.lastSearches.push(this.keyword);
+          localStorage.setItem(
+            "lastSearches",
+            JSON.stringify(this.lastSearches)
+          );
+        }
       }
     },
   },
