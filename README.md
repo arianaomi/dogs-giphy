@@ -1,10 +1,10 @@
 ![alt text](https://media.giphy.com/media/eYilisUwipOEM/giphy.gif)
 
 # 🐶 dogs-giphy
-Dogs-giphy is giphy client where you can get nice dogs gifs   😎
+Dogs-giphy is giphy client where you can get nice dogs gifs ➡️ [DEMO](https://dogs-giphy.vercel.app/)  😎 
 
 
-## Steps ⏩
+## Steps ⏩ 
 
 
 - [ ] Clone the repository.
