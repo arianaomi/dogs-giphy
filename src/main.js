@@ -3,6 +3,7 @@ import App from './App.vue'
 import store from './store'
 // import tailwind
 import '@/assets/css/tailwind.css'
+//dependencies
 import { VueSpinners } from '@saeris/vue-spinners'
 import VAnimateCss from 'v-animate-css';
 

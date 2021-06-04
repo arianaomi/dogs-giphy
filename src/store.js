@@ -1,4 +1,4 @@
-/* Usando VUEX: para poder tener acceder a favoritos desde otra vista */
+/* Usando VUEX: para poder acceder a favoritos desde otra vista */
 import Vue from 'vue'
 import Vuex from 'vuex'
 

@@ -1,8 +1,7 @@
-
 <template>
   <article
     class="bg-gradient-to-r from-blue-400 to-pink-200 w-full my-3 rounded relative md:w-45 md:inline-block lg:w-auto"
-    v-animate-css.once="animationObject"
+    v-animate-css.once="animationCard"
   >
     <img
       ref="url"
@@ -30,7 +29,6 @@
           class="h-6 mx-2 w-full rounded text-center cursor-pointer my-auto bg-transparent"
         />
       </div>
-
       <transition name="move">
         <img
           v-if="!isFavorite"
@@ -65,7 +63,8 @@ export default {
   data() {
     return {
       isFavorite: false,
-      animationObject: {
+      // objeto de la animación
+      animationCard: {
         classes: "fadeInLeft",
         delay: 500,
         duration: 1000,
@@ -88,6 +87,9 @@ export default {
       document.execCommand("copy");
       this.$refs.url.value = "¡Copiado!";
     },
+    /* addFavorite y removeFavorite son metodos que nos ayudan a
+        manipular el estado de favorites que se comparte entre vistas
+     */
     addFavorite() {
       this.isFavorite = !this.isFavorite;
       let gifFavorite = { ...this.gif, isFavorite: true };

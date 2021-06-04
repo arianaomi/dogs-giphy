@@ -2,7 +2,7 @@
   <div>
     <search @search="serch" />
     <div
-      class="hidden py-2 md:flex justify-between lg:justify-center flex-wrap"
+      class="hidden py-2 md:flex flex-wrap justify-between lg:justify-center"
     >
       <last-search v-for="last in lastSearches" :key="last" :keyword="last" />
     </div>
@@ -18,7 +18,7 @@
 
 <script>
 import api from "@/lib/api";
-
+//My components
 import Search from "../components/Search";
 import GifList from "../components/GifList";
 import LastSearch from "../components/LastSearch";
@@ -38,15 +38,15 @@ export default {
       isLoading: false,
     };
   },
+  /* Obtener los gifs que se muestran al cargar la página */
   created() {
-    // llamar a la funcion que tarea los gifs
     this.isLoading = true;
     api
-      .getDogsGif()
+      .getDogsGifs()
       .then((res) => (this.gifs = res))
       .finally(() => (this.isLoading = false));
+    //verificar si existen busquedas guaradadas en localStorage
     let data = localStorage.getItem("lastSearches");
-
     if (data != null) {
       this.lastSearches = JSON.parse(data).reverse();
     }
@@ -56,6 +56,7 @@ export default {
       this.gifs = result;
     },
   },
+  /*Saber cuando se realizo una nueva busqueda para mostarla*/
   watch: {
     gifs() {
       let data = localStorage.getItem("lastSearches");

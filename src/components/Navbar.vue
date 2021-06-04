@@ -15,7 +15,6 @@
         DOG GIPHY
       </p>
     </router-link>
-
     <img
       src="https://media.giphy.com/media/KCwenuvmXxXBKrRyry/giphy.gif"
       class="w-12 md:w-24 rounded"
@@ -49,6 +48,9 @@ export default {
       isHome: true,
       show: true,
     };
+  },
+  created() {
+    this.lookPath();
   },
   watch: {
     $route() {

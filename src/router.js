@@ -1,4 +1,4 @@
-/* Configurando router */
+
 import Vue from 'vue'
 import Router from 'vue-router'
 //My views
@@ -8,7 +8,7 @@ import Error from '@/views/Error'
 
 Vue.use(Router)
 
-/* Declarando las rutas de las páginas que contine nuestra sitio */
+/* Rutas que contiene nuestro sitio */
 export default new Router({
   mode: "history",
   routes: [

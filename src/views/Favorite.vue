@@ -8,29 +8,29 @@
         class="m-auto my-10 bg-purple-400 rounded"
         v-animate-css.once="'rotateInDownLeft'"
       />
-      <div v-animate-css.once="animationInfinite">
+      <div v-animate-css.once="animationWords">
         <p
           class="text-purple-700 text-opacity-100 font-serif text-9xl font-bold"
         >
-          No tienes favoritos
+          No tienes gifs favoritos
         </p>
         <p
           class="text-purple-700 text-opacity-75 font-serif text-9xl font-bold"
         >
-          No tienes favoritos
+          No tienes gifs favoritos
         </p>
         <p
           class="text-purple-700 text-opacity-50 font-serif text-9xl font-bold"
         >
-          No tienes favoritos
+          No tienes gifs favoritos
         </p>
         <p
           class="text-purple-700 text-opacity-25 font-serif text-9xl font-bold"
         >
-          No tienes favoritos
+          No tienes gifs favoritos
         </p>
         <p class="text-purple-700 text-opacity-0 font-serif text-9xl font-bold">
-          No tienes favoritos
+          No tienes gifs favoritos
         </p>
       </div>
     </div>
@@ -39,6 +39,7 @@
 
 <script>
 import GifList from "../components/GifList";
+
 export default {
   name: "Favorite",
   components: {
@@ -47,7 +48,8 @@ export default {
   data() {
     return {
       loading: true,
-      animationInfinite: {
+      //objeto de la animación
+      animationWords: {
         classes: "rubberBand",
         duration: 5000,
         iteration: "infinite",
@@ -55,6 +57,7 @@ export default {
     };
   },
   computed: {
+    /* obtener el estado de favorites para poderlos renderizar */
     favorites() {
       return this.$store.state.favorites;
     },
