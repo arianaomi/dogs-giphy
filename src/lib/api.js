@@ -14,7 +14,6 @@ const getDogsGifs = async () => {
 
 const getSpecialGifs = async (keyword) => {
   try {
-    console.log()
     let res = await fetch(`${baseUrl}${keyword}`)
     res = await res.json()
     return res.data

@@ -22,6 +22,9 @@ module.exports = {
       },
       height: {
         '240': '240px'
+      },
+      fontSize: {
+        'md': '24px'
       }
     }
   },

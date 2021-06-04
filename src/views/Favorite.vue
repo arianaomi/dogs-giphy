@@ -1,7 +1,15 @@
 
 <template>
   <div>
-    <gif-list v-if="!this.loading" :gifs="favorites" />
+    <div v-if="!this.loading">
+      <p
+        class="text-purple-700 text-opacity-100 font-serif text-md font-bold text-center my-5"
+        v-animate-css.once="animationFavorite"
+      >
+        TUS GIFS FAVORITOS
+      </p>
+      <gif-list :gifs="favorites" />
+    </div>
     <div v-else class="text-center">
       <img
         src="https://media.giphy.com/media/GwskZm1jXg8cDvuZJ6/giphy.gif"
@@ -51,6 +59,12 @@ export default {
       //objeto de la animación
       animationWords: {
         classes: "rubberBand",
+        duration: 5000,
+        iteration: "infinite",
+      },
+      animationFavorite: {
+        classes: "jello",
+        delay: 4000,
         duration: 5000,
         iteration: "infinite",
       },

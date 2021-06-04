@@ -6,6 +6,13 @@
     >
       <last-search v-for="last in lastSearches" :key="last" :keyword="last" />
     </div>
+    <p
+      class="text-purple-700 text-opacity-100 font-serif text-md font-bold text-center my-5"
+      v-animate-css.once="'flipInX'"
+      v-if="isLoading"
+    >
+      UPS! No se encontaron gifs
+    </p>
     <pacman-loader
       :loading="isLoading"
       :color="'#DAA4E7'"
@@ -53,7 +60,11 @@ export default {
   },
   methods: {
     serch(result) {
-      this.gifs = result;
+      if (result.length) {
+        this.gifs = result;
+        this.isLoading = false;
+      }
+      this.isLoading = true;
     },
   },
   /*Saber cuando se realizo una nueva busqueda para mostarla*/
