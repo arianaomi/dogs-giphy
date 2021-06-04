@@ -1,8 +1,19 @@
 <template>
   <nav class="flex justify-between justify-items-center md:h-full my-8">
     <router-link :to="{ name: 'home' }" class="my-auto mx-5 w-8 md:w-1/6">
-      <img src="../assets/shiba.png" class="w-8 mx-2 cursor-pointer" />
-      <p class="text-pink-700 text-opacity-100 md:text-2xl">DOG GIPHY</p>
+      <transition name="bounce">
+        <img
+          src="../assets/shiba.png"
+          class="w-8 mx-2 cursor-pointer"
+          v-if="show"
+        />
+      </transition>
+      <p
+        class="text-pink-700 text-opacity-100 md:text-2xl animate__animated animate__bounce"
+        @click="show = !show"
+      >
+        DOG GIPHY
+      </p>
     </router-link>
 
     <img
@@ -36,6 +47,7 @@ export default {
   data() {
     return {
       isHome: true,
+      show: true,
     };
   },
   watch: {

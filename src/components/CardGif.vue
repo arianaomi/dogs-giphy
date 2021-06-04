@@ -18,7 +18,7 @@
         <img
           src="../assets/glasses.png"
           alt="see-more"
-          class="h-8 cursor-pointer"
+          class="h-8 cursor-pointer .mob"
         />
         <input
           readonly
@@ -29,20 +29,24 @@
         />
       </div>
 
-      <img
-        v-if="!isFavorite"
-        src="../assets/tv.png"
-        alt="favorite-off"
-        class="h-8 mx-2 cursor-pointer"
-        @click="addFavorite"
-      />
-      <img
-        v-else
-        alt="favorite-on"
-        src="../assets/tv-color.png"
-        class="h-8 mx-2 cursor-pointer"
-        @click="removeFavorite"
-      />
+      <transition name="move">
+        <img
+          v-if="!isFavorite"
+          src="../assets/tv.png"
+          alt="favorite-off"
+          class="h-8 mx-2 cursor-pointer"
+          @click="addFavorite"
+        />
+      </transition>
+      <transition name="move">
+        <img
+          v-if="isFavorite"
+          alt="favorite-on"
+          src="../assets/tv-color.png"
+          class="h-8 mx-2 cursor-pointer"
+          @click="removeFavorite"
+        />
+      </transition>
     </div>
   </article>
 </template>

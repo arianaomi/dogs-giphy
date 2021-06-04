@@ -9,6 +9,7 @@ import router from '@/router'
 
 Vue.use(VueSpinners)
 
+
 Vue.config.productionTip = false
 
 new Vue({
