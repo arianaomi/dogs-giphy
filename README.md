@@ -1,25 +1,30 @@
-# dogs-giphy
+# 🐶 dogs-giphy
+Dogs-giphy is giphy client where you can get nice dogs gifs   😎
 
-## Project setup
-```
-npm install
-```
+![alt text](https://media.giphy.com/media/eYilisUwipOEM/giphy.gif)
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+## Steps ⏩
+---
 
-### Compiles and minifies for production
-```
-npm run build
-```
+- [ ] Clone the repository.
 
-### Lints and fixes files
-```
-npm run lint
-```
+- [ ] You will need to install all dependencies  ➡️  `$ npm install`
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
-https://jofftiquez.github.io/v-animate-css/
+- [ ] You will need to get your api_key (SDK) ➡️  [giphy]( https://developers.giphy.com/)
+
+- [ ] Create a .env file in the root directory
+
+- [ ] Run the command ➡️ `$ npm run serve`
+
+
+
+## Project
+---
+Dog-giphy  uses this  framework, libraries
+- Vue.js 2
+- tailwindcss
+- [Vue Animate CSS](https://jofftiquez.github.io/v-animate-css/)
+- [VUE SPINNERS](https://vue-spinners.saeris.io/)
+
+
+
