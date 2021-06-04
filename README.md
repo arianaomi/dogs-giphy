@@ -4,7 +4,7 @@ Dogs-giphy is giphy client where you can get nice dogs gifs   😎
 ![alt text](https://media.giphy.com/media/eYilisUwipOEM/giphy.gif)
 
 ## Steps ⏩
----
+
 
 - [ ] Clone the repository.
 
@@ -17,14 +17,24 @@ Dogs-giphy is giphy client where you can get nice dogs gifs   😎
 - [ ] Run the command ➡️ `$ npm run serve`
 
 
+## Features📝
 
-## Project
----
-Dog-giphy  uses this  framework, libraries
+- Responsive
+- Reusable components
+- Animations
+- Save previous searches in localStorage
+- Save favorites
+-
+## Tool  ⚒️
+
+Dog-giphy  uses this  framework and libraries.
 - Vue.js 2
 - tailwindcss
 - [Vue Animate CSS](https://jofftiquez.github.io/v-animate-css/)
 - [VUE SPINNERS](https://vue-spinners.saeris.io/)
 
+The API that it uses is **giphy API**
 
+---
+@arianaomi
 
